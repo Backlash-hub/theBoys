@@ -287,13 +287,8 @@ development:
     # validate_update_replace: false
 
 
-test:
+development:
   clients:
     default:
-      database: the_boys_test
-      hosts:
-        - localhost:27017
-      options:
-        read:
-          mode: :primary
-        max_pool_size: 1
+      uri: <%= ENV['MONGODB_URI'] %>
+
