@@ -291,4 +291,5 @@ development:
   clients:
     default:
       uri: <%= ENV['MONGODB_URI'] %>
+      database: theBoysDb
 
