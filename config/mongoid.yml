@@ -9,7 +9,7 @@ development:
       # Otherwise define the parameters separately.
       # This defines the name of the default database that Mongoid can connect to.
       # (required).
-      database: the_boys_development
+      database: theBoysDB
       # Provides the hosts the default client can connect to. Must be an array
       # of host:port pairs. (required)
       hosts:
@@ -290,6 +290,5 @@ development:
 development:
   clients:
     default:
-      uri: <%= ENV['MONGODB_URI'] %>
-      database: theBoysDb
+       uri: <%= ENV["MONGODB_URI"] %>
 
