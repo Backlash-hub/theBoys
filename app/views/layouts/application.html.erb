@@ -10,21 +10,28 @@
 
     <%= yield :head %>
 
-    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
-    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
-
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+    <!-- REMOVE importmap, you're using Vite -->
+    <%# <%= javascript_importmap_tags %> %>
+
+    <!-- Vite client and JS (React) entrypoint -->
+    <%= vite_client_tag %>
+    <%= vite_javascript_tag "application.jsx", type: "module" %>
   </head>
 
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    
     <%= yield %>
+
+    <!-- React will mount into this -->
+    <div id="root"></div>
   </body>
 </html>
+ 
