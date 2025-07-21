@@ -1,10 +1,7 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "../components/App";
 
-function App() {
-  return <h1>Hello from React in Rails!</h1>;
-}
-
-const root = createRoot(document.getElementById('root'));
-root.render(<App />);
+const root = document.getElementById("root");
+if (root) createRoot(root).render(<App />);
  

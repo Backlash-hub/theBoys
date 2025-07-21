@@ -32,6 +32,12 @@
 
     <!-- React will mount into this -->
     <div id="root"></div>
+    <%= vite_client_tag %>
+    <%= vite_javascript_tag "application.jsx", type: "module" %>
+    <nav>
+      <%= link_to "Home", root_path %> |
+      <%= link_to "About", about_path %>
+    </nav>
   </body>
 </html>
  
